@@ -1,16 +1,105 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Bienvenida - Mi Portafolio" currentPage="/">
+  <div class="welcome-container">
+    <div class="welcome-box">
+      <h1 class="welcome-title">Bienvenido</h1>
+
+      <div class="phrase-container">
+        <p class="animated-phrase">Si puedes imaginarlo, puedes programarlo</p>
+        <span class="author">— Alejandro Taboada</span>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .welcome-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+    }
+
+    .welcome-box {
+      display: inline-block;
+      text-align: center;
+    }
+
+    .welcome-title {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 48px;
+      color: #fff;
+      text-align: center;
+      line-height: 1.4;
+      letter-spacing: 2px;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      animation: typing 2s steps(10, end) forwards;
+    }
+
+    .phrase-container {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .animated-phrase {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 18px;
+      color: #fff;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      opacity: 0;
+      animation: 
+        show 0s 2s forwards,
+        typing 3s steps(45, end) 2s forwards;
+    }
+
+    .author {
+      display: inline-block;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #888;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      opacity: 0;
+      animation: 
+        show 0s 5s forwards,
+        typing 2s steps(20, end) 5s forwards;
+    }
+
+    @keyframes show {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .welcome-title {
+        font-size: 24px;
+      }
+      
+      .animated-phrase {
+        font-size: 14px;
+      }
+      
+      .author {
+        font-size: 10px;
+      }
+    }
+  </style>
+</Layout>
