@@ -32,7 +32,7 @@ const base = import.meta.env.BASE_URL;
             <div class="carousel-track" data-track>
               {job.images.map((img, i) => (
                 <div class="carousel-slide" data-slide={i}>
-                  <img src={`/${img}`} alt={`${job.company.es} - ${i + 1}`} class="carousel-img" />
+                  <img src={base + '/' + img} alt={`${job.company.es} - ${i + 1}`} class="carousel-img" />
                 </div>
               ))}
             </div>
@@ -44,7 +44,7 @@ const base = import.meta.env.BASE_URL;
           </div>
         : <div class="detail-img-main">
             {job.image
-              ? <img src={`/${job.image}`} alt={job.company.es} class="detail-img" />
+              ? <img src={base + '/' + job.image} alt={job.company.es} class="detail-img" />
               : <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="8" y1="2" x2="8" y2="22"/><line x1="16" y1="2" x2="16" y2="22"/><line x1="2" y1="8" x2="22" y2="8"/><line x1="2" y1="16" x2="22" y2="16"/></svg>
             }
           </div>

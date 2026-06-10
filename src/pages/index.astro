@@ -91,7 +91,7 @@ const skillIcons = {
               <div class="timeline-card-media">
                 <div class="timeline-img-placeholder">
                   {job.image
-                    ? <img src={`/${job.image}`} alt={job.company.es} class="timeline-img" />
+                    ? <img src={base + '/' + job.image} alt={job.company.es} class="timeline-img" />
                     : <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="8" y1="2" x2="8" y2="22"/><line x1="16" y1="2" x2="16" y2="22"/><line x1="2" y1="8" x2="22" y2="8"/><line x1="2" y1="16" x2="22" y2="16"/></svg>
                   }
                 </div>
