@@ -10,12 +10,13 @@ export async function getStaticPaths() {
 }
 
 const { job } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title={`${job.role.es} — ${job.company.es} — D3vjh0n`} currentPage="/trabajo">
+<Layout title={`${job.role.es} — ${job.company.es} — D3vjh0n`} currentPage={base + '/trabajo'}>
   <article class="detail">
     <div class="detail-header">
-      <a href="/#trabajo" class="detail-back">
+      <a href={base + '/#trabajo'} class="detail-back">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         Volver
       </a>

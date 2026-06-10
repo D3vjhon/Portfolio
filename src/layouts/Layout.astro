@@ -8,14 +8,15 @@ interface Props {
 }
 
 const { title, currentPage } = Astro.props;
+const base = import.meta.env.BASE_URL;
 const navIcons = {
   inicio: '<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>',
   proyectos: '<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6a2 2 0 0 1 2-2h5l2 2h9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z"/></svg>'
 };
 
 const menuItems = [
-  { name: "Inicio", href: "/", i18n: "nav.inicio", icon: navIcons.inicio },
-  { name: "Proyectos", href: "/proyectos", i18n: "nav.proyectos", icon: navIcons.proyectos }
+  { name: "Inicio", href: base, i18n: "nav.inicio", icon: navIcons.inicio },
+  { name: "Proyectos", href: base + '/proyectos', i18n: "nav.proyectos", icon: navIcons.proyectos }
 ];
 ---
 
@@ -23,7 +24,7 @@ const menuItems = [
 <html lang="es" data-theme="dark">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={base + '/favicon.svg'} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -190,7 +191,7 @@ const menuItems = [
 
     <div class="top-bar">
       <div class="top-bar-left">
-        <a href="/" class="top-logo">D3vjh0n</a>
+        <a href={base} class="top-logo">D3vjh0n</a>
       </div>
       <div class="top-bar-right">
         <div class="lang-wrapper">

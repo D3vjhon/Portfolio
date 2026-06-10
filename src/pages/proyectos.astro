@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+const base = import.meta.env.BASE_URL;
 const projects = [
   {
     title: "CrudRedux",
@@ -30,8 +30,7 @@ const projects = [
   }
 ];
 ---
-
-<Layout title="Proyectos — D3vjh0n" currentPage="/proyectos">
+<Layout title="Proyectos — D3vjh0n" currentPage={base + '/proyectos'}>
   <section class="page-header reveal">
     <h1 class="page-title"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> <span data-i18n="proyectos.title">Proyectos</span></h1>
     <p class="page-desc" data-i18n="proyectos.desc">Algunos trabajos personales y profesionales que he realizado.</p>
